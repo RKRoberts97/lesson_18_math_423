@@ -1,0 +1,122 @@
+---
+title: "Lesson 18 Variance of Linear Combinations"
+format:
+  revealjs:
+    chalkboard: true
+---
+
+## Main Topics
+
+- How to read a variance-covariance matrix
+- Finding the variance of linear combinations
+- Properties for finding the variance of a linear combination of 2 random variables
+
+## Very brief reminder of a linear combination
+
+$$
+Y = a_1X_1 + a_2X_2+...+a_nX_n
+$$
+
+## Variance-Covariance Matrices
+
+$$
+V=
+\begin{bmatrix}
+V[X_1] & \mathrm{COV}(X_1,X_2) & \cdots & \mathrm{COV}(X_1,X_n)\\
+\mathrm{COV}(X_2,X_1) & V[X_2] & \cdots & \mathrm{COV}(X_2,X_n)\\
+\vdots & \vdots & \ddots & \vdots\\
+\mathrm{COV}(X_n,X_1) & \mathrm{COV}(X_n,X_2) & \cdots & V[X_n]
+\end{bmatrix}
+$$
+
+
+
+## Reading a Variance-Covariance Matrix
+
+$$
+V=
+\begin{bmatrix}
+9 & 3 & 2 & 1\\
+3 & 4 & 1.5 & 0.5\\
+2 & 1.5 & 49 & 7\\
+1 & 0.5 & 7 & 25
+\end{bmatrix}
+$$
+
+
+
+
+## Properties of Variance and Covariance
+::: {.fragment .fade-left}
+$$
+V[X] = COV[X,X]
+$$
+:::
+
+
+::: {.fragment .fade-left}
+$$
+COV(X,Y) = COV(Y,X)
+$$
+:::
+
+
+## Variance of linear combinations
+
+$$
+V[Y] = \sum_{i=1}^{n} a_i^2 V[X_i]
+      + 2 \sum_{i<j} a_i a_j \mathrm{COV}(X_i, X_j)
+$$
+
+
+## Finding the variance of a linear combination
+
+Find $V[Y]$
+
+::: {.panel-tabset}
+
+### Linear Combination
+
+$$
+Y = 0.1X_1 + 0.2X_2 + 0.3X_3 + 0.4X_4 
+$$
+
+### Variance-Covariance Matrix
+$$
+V=
+\begin{bmatrix}
+9 & 3 & 2 & 1\\
+3 & 4 & 1.5 & 0.5\\
+2 & 1.5 & 49 & 7\\
+1 & 0.5 & 7 & 25
+\end{bmatrix}
+$$
+:::
+
+::: {.fragment .fade-left}
+$$
+V[Y] = 11.115
+$$
+:::
+
+## Properties for finding the variance of a linear combination of 2 random variables
+
+::: {.fragment .fade-left}
+$$
+V[aX + bY] = a^2V[X] + b^2V[Y] + 2abCOV(X, Y)
+$$
+:::
+
+::: {.fragment .fade-left}
+$$
+V[X + Y] = V[X] + V[Y] + 2COV(X, Y)
+$$
+:::
+
+::: {.fragment .fade-left}
+$$
+V[X - Y] = V[X] + V[Y] - 2COV(X, Y)
+$$
+:::
+
+
